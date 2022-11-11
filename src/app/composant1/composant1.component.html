@@ -1,0 +1,5 @@
+<div [ngStyle]="{'background-color': color}">
+    <input type="text" id="color" [(ngModel)]="color" >
+    <button (click)="resetColor()">Reset</button>
+</div>
+<app-comp-fils [color]="color" (colorEvent) ="changeToFavoriteColor($event)"></app-comp-fils>

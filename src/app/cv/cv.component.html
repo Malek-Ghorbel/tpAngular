@@ -1,0 +1,11 @@
+<div class = "container">
+    <div class = "row">
+        <div class = "col-md-6">
+            <app-lis [cvs]="cvs" (cvEventEmitter)="getCv($event)"></app-lis>
+        </div>
+        <div class = "col-md-6">
+            <app-detailt [cv]="cv"></app-detailt>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div class="card-container" *ngIf="cv.name != '' ">
+    <div class="card">
+        <div class="front">
+            <div class="cover">
+                <img src="/assets/images/rotating_card_thumb3.png"/>
+            </div>
+            <div class="user">
+                <img class="img-circle" src={{cv.path}}/>
+            </div>
+            <div class="content">
+                <div class="main">
+                    <h3 class="name">{{cv.name + ' ' + cv.firstname}}</h3>
+                    <p class="profession">{{cv.job}}</p>
+
+                    <p class="text-center">{{cv.age}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
