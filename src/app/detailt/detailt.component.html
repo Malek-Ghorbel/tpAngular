@@ -5,7 +5,7 @@
                 <img src="/assets/images/rotating_card_thumb3.png"/>
             </div>
             <div class="user">
-                <img class="img-circle" src={{cv.path}}/>
+                <img class="img-circle" src={{cv.path|defaultimage}}/>
             </div>
             <div class="content">
                 <div class="main">
@@ -16,5 +16,17 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <div class="back">
+            <div class="header">
+                <h5 class="motto">"To be or not to be, this is my awesome motto!"</h5>
+            </div>
+            <div class="content">
+                <div class="main">
+                    <button class="btn btn-primary" (click)="embaucher()" *ngIf="!embaucheContext">embaucher</button>
+                    <button class="btn btn-danger" (click)="remove()" *ngIf="embaucheContext">remove</button>
+                </div>
+            </div>
+        </div> <!-- end back panel -->
+    </div> <!-- end card -->
+</div> <!-- end card-container -->
+

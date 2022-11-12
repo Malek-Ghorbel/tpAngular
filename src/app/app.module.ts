@@ -11,6 +11,12 @@ import { CvComponent } from './cv/cv.component';
 import { LisComponent } from './lis/lis.component';
 import { ItemComponent } from './item/item.component';
 import { DetailtComponent } from './detailt/detailt.component';
+import { MiniWordComponent } from './mini-word/mini-word.component';
+import { RainbowDirective } from './rainbow.directive';
+import { DefaultimagePipe } from './defaultimage.pipe';
+import { EmbaucheComponent } from './embauche/embauche.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -21,12 +27,18 @@ import { DetailtComponent } from './detailt/detailt.component';
     CvComponent,
     LisComponent,
     ItemComponent,
-    DetailtComponent
+    DetailtComponent,
+    MiniWordComponent,
+    RainbowDirective,
+    DefaultimagePipe,
+    EmbaucheComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot(), // ToastrModule added
   ],
   providers: [],
   bootstrap: [AppComponent]

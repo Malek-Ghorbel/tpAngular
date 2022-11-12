@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CvService } from '../cv.service';
 import { Cv } from './model/cv.model';
 
 @Component({
@@ -8,13 +9,12 @@ import { Cv } from './model/cv.model';
 })
 export class CvComponent implements OnInit {
 
-  cvs = [
-    new Cv(1, "firstOne", "aaaa", 3 , "AAAA" , "oooo" , "assets/images/rotating_card_profile3.png"),
-    new Cv(2, "secondOne", "aaaa", 5 , "AAAA" , "oooo" , "assets/images/rotating_card_profile3.png"),
-  ]
+  cvs;
 
   cv = new Cv();
-  constructor() { }
+  constructor(private cvService : CvService) {
+    this.cvs = cvService.getCvs();
+  }
 
   getCv(cv : Cv){
     this.cv=cv;
