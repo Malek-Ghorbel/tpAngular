@@ -1,12 +1,16 @@
 
-<h2>Cv disponible</h2>
-<br>
-<app-cv  ></app-cv>
+<div class="container">
+    <ul>
+        <li><a routerLink="cv">cv</a></li>
+        <li><a routerLink="embauche">embauche</a></li>
+        <li><a routerLink="miniword">miniword</a></li>
+        <li><a routerLink="authentification">authentification</a></li>
+        <li><a routerLink="add">add Personne</a></li>
+        <li><a routerLink="image">Image Sequence</a></li>
+      </ul>
+      <br>
+    <app-routersimulator></app-routersimulator>
+</div>
 
-<h2>Cv embauche</h2>
-<br>
-<app-embauche></app-embauche>
+<router-outlet></router-outlet>
 
-<br>
-<h2>Exercice de mini Word</h2>
-<app-mini-word></app-mini-word>

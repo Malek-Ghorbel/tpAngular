@@ -7,9 +7,9 @@ import { Cv } from './cv/model/cv.model';
 export class CvService {
 
   cvs = [
-    new Cv(1, "firstOne", "aaaa", 3 , "AAAA" , "oooo" , "assets/images/rotating_card_profile3.png"),
-    new Cv(2, "secondOne", "aaaa", 5 , "AAAA" , "oooo" , "assets/images/rotating_card_profile2.png"),
-    new Cv(3, "thirdOne", "no image", 8 , "AAAA" , "oooo" , ""),
+    new Cv(0, "firstOne", "aaaa", 3 , "AAAA" , "oooo" , "assets/images/rotating_card_profile3.png"),
+    new Cv(1, "secondOne", "aaaa", 5 , "AAAA" , "oooo" , "assets/images/rotating_card_profile2.png"),
+    new Cv(2, "thirdOne", "no image", 8 , "AAAA" , "oooo" , ""),
   ]
 
   getCvs(): Cv[] {
@@ -23,8 +23,12 @@ export class CvService {
   }
 
   addCv(cv: Cv){
-    if ( ! this.cvs.find(element => element.id == cv.id))
+    console.log('hiiiii');
+    if ( ! this.cvs.includes(cv)) {
+      
       this.cvs.push(cv);
+      console.log('here') ;
+    }
   }
   constructor() { }
 }

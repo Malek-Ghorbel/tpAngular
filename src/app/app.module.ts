@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +17,10 @@ import { DefaultimagePipe } from './defaultimage.pipe';
 import { EmbaucheComponent } from './embauche/embauche.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RoutersimulatorComponent } from './routersimulator/routersimulator.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
+import { ImageSequenceComponent } from './image-sequence/image-sequence.component';
+
 
 @NgModule({
   declarations: [
@@ -31,12 +35,17 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MiniWordComponent,
     RainbowDirective,
     DefaultimagePipe,
-    EmbaucheComponent
+    EmbaucheComponent,
+    RoutersimulatorComponent,
+    AuthentificationComponent,
+    ImageSequenceComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot(), // ToastrModule added
   ],

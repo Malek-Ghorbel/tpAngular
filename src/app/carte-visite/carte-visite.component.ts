@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CvService } from '../cv.service';
+import { Cv } from '../cv/model/cv.model';
 
 @Component({
   selector: 'app-carte-visite',
@@ -6,22 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./carte-visite.component.scss']
 })
 export class CarteVisiteComponent implements OnInit {
-
-  carte = {
+  currentId = this.cvService.getCvs.length + 1 ;
+  carte : Cv = {
+    id : this.currentId,
     name : "",
-    firstName :"",
+    firstname :"",
     job :"",
-    image: "rotating_card_profile.png",
-    citation: "",
-    description:"",
-    motcles: "",
+    path: "",
+    age: 0,
+    cin:"",
   }
-  constructor() { }
+  constructor(private cvService : CvService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  submitCard(){
-    console.log(this.carte)
+  submitCv(){
+    console.log(this.carte);
+    this.cvService.addCv(this.carte);
+    this.router.navigateByUrl('/cv')
   }
 }

@@ -1,0 +1,41 @@
+<div class="container">
+<form [formGroup]="form"  (ngsubmit)="submitForm()">
+ 
+    <div class="input-group mb-3">
+        <label>email :</label>
+    <input type="text" id="mail" class="form-control"
+        formControlName="mail" required name="mail" [(ngModel)]="user.mail" >
+
+    <div *ngIf="form.controls['mail'].dirty && (form.controls['mail'].errors?.['required'] || form.controls['mail'].errors?.['email']) "
+        class="alert alert-danger">
+        
+    <div *ngIf="form.controls['mail'].errors?.['required']">
+        email is required.
+    </div>
+    <div *ngIf="form.controls['mail'].errors?.['email']">
+        a correct email is required.
+    </div>
+    </div>
+</div>
+
+<div class="input-group mb-3">
+    <label>password :</label>
+    <input type="password" id="pass" class="form-control"
+        formControlName="pass" required [(ngModel)]="user.pass">
+
+    <div *ngIf="(form.controls['pass'].errors?.['required'] || form.controls['pass'].errors?.['minlength'])  && form.controls['pass'].dirty" 
+        class="alert alert-danger">
+        
+    <div *ngIf="form.controls['pass'].errors?.['required']">
+        password is required.
+    </div>
+    <div *ngIf="form.controls['pass'].errors?.['minlength']">
+        password must be at least 4 characters long.
+    </div>
+    </div>
+</div>
+    <br>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid" (click)="submitForm()">submit</button>
+
+</form>
+</div>
