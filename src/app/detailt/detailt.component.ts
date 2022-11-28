@@ -12,7 +12,7 @@ import { EmbaucheService } from '../embauche.service';
 })
 export class DetailtComponent implements OnInit {
 
-  @Input()
+  
   cv : Cv = new Cv();
   @Input()
   embaucheContext : boolean = false;
@@ -20,13 +20,20 @@ export class DetailtComponent implements OnInit {
                private cvService : CvService,
                private toastr: ToastrService) { }
 
-  ngOnInit(): void {
-  }
+ 
 
   embaucher() {
     this.embaucheService.addCv(this.cv);
     
     this.cv = new Cv() ;
+  }
+
+  ngOnInit(): void {
+    this.cvService.CvSubject.subscribe(
+      data =>{
+        this.cv= data ;
+      }
+    )
   }
 
   remove() {

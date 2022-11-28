@@ -1,4 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { CvService } from '../cv.service';
 import { Cv } from '../cv/model/cv.model';
 
 @Component({
@@ -10,14 +11,13 @@ export class ItemComponent implements OnInit {
 
   @Input()
   cv : Cv | null = null;
-  constructor() { }
+  constructor(private cvService : CvService) { }
 
-  @Output()
-  cvEmitter = new EventEmitter<Cv >();
+  
   ngOnInit(): void {
   }
   chooseCv( ) {
     if(this.cv)
-      this.cvEmitter.emit(this.cv);
+      this.cvService.passValue(this.cv);
   }
 }

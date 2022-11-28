@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 import { Cv } from './cv/model/cv.model';
 
 @Injectable({
@@ -12,6 +13,13 @@ export class CvService {
     new Cv(2, "thirdOne", "no image", 8 , "AAAA" , "oooo" , ""),
   ]
 
+  public CvSubject = new Subject<Cv>();
+
+  passValue(data : Cv) {
+    //passing the data as the next observable
+    this.CvSubject.next(data);
+  }
+  
   getCvs(): Cv[] {
     return this.cvs;
   }
@@ -23,11 +31,8 @@ export class CvService {
   }
 
   addCv(cv: Cv){
-    console.log('hiiiii');
     if ( ! this.cvs.includes(cv)) {
-      
       this.cvs.push(cv);
-      console.log('here') ;
     }
   }
   constructor() { }

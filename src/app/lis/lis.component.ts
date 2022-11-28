@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { CvService } from '../cv.service';
 import { Cv } from '../cv/model/cv.model';
 
 @Component({
@@ -11,15 +12,9 @@ export class LisComponent implements OnInit {
   @Input()
   cvs = new Array<Cv>();
   constructor() { }
-  cv = new Cv()
 
-  @Output()
-  cvEventEmitter = new EventEmitter<Cv>();
   ngOnInit(): void {
   }
 
-  addCv(cv : Cv){
-    this.cv = cv;
-    this.cvEventEmitter.emit(cv);
-  }
+
 }
