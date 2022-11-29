@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="main-body">
+    
+          <div class="row gutters-sm">
+            <div class="col-md-4 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="{{cv.path|defaultimage}}" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{cv.name}}</h4>
+                      <p class="text-secondary mb-1">{{cv.job}}</p>
+                      <button class="btn btn-danger" (click)="deleteCv()">delete</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-8">
+              <div class="card mb-3">
+                <div class="card-body">
+                    <h3>Informations : </h3><br>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{cv.name + ' ' +  cv.firstname}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">job</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      {{cv.job}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">age</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{cv.age}}
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">cin</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                        {{cv.cin}}
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+
+
+            </div>
+          </div>
+
+        </div>
+    </div>

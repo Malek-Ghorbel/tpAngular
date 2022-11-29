@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CvService } from '../cv.service';
 import { Cv } from '../cv/model/cv.model';
@@ -18,7 +19,8 @@ export class DetailtComponent implements OnInit {
   embaucheContext : boolean = false;
   constructor(private embaucheService : EmbaucheService,
                private cvService : CvService,
-               private toastr: ToastrService) { }
+               private toastr: ToastrService,
+               private router:Router) { }
 
  
 
@@ -29,7 +31,7 @@ export class DetailtComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.cvService.CvSubject.subscribe(
+    this.cvService.selectCv$.subscribe(
       data =>{
         this.cv= data ;
       }

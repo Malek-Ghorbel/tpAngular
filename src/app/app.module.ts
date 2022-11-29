@@ -20,6 +20,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RoutersimulatorComponent } from './routersimulator/routersimulator.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { ImageSequenceComponent } from './image-sequence/image-sequence.component';
+import { CvDetailsComponent } from './cv-details/cv-details.component';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { ImageSequenceComponent } from './image-sequence/image-sequence.componen
     RoutersimulatorComponent,
     AuthentificationComponent,
     ImageSequenceComponent,
+    CvDetailsComponent,
     
   ],
   imports: [

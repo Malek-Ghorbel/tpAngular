@@ -22,7 +22,8 @@
             </div>
             <div class="content">
                 <div class="main">
-                    <button class="btn btn-primary" (click)="embaucher()" *ngIf="!embaucheContext">embaucher</button>
+                    <button class="btn btn-primary" (click)="embaucher()" *ngIf="!embaucheContext">embaucher</button> &nbsp;
+                    <button class="btn btn-success" [routerLink]="['/cv/details', cv.id]" *ngIf="!embaucheContext">details</button>
                     <button class="btn btn-danger" (click)="remove()" *ngIf="embaucheContext">remove</button>
                 </div>
             </div>

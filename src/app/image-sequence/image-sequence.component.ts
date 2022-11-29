@@ -10,7 +10,7 @@ export class ImageSequenceComponent implements OnInit {
   src = "/assets/images/a.png"
   constructor() { }
   sources = ["/assets/images/a.png" , "/assets/images/rotating_card_profile2.png" , "/assets/images/rotating_card_profile3.png" , "/assets/images/tim_logo.png"]
-   observable = new Observable(
+   observable$ = new Observable(
     (observer) => {
       let i = 
       4;
@@ -25,7 +25,7 @@ export class ImageSequenceComponent implements OnInit {
     
     
   ngOnInit(): void {
-    this.observable.subscribe({
+    this.observable$.subscribe({
       next(x) {},
     }
     );
